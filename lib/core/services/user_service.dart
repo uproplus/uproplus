@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
-import 'package:path/path.dart'
-;import 'package:mime/mime.dart';
+import 'package:path/path.dart';
+import 'package:mime/mime.dart';
 
 import 'package:amazon_cognito_identity_dart/cognito.dart';
 import 'package:http_parser/http_parser.dart';
