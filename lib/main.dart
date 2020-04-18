@@ -22,7 +22,6 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   setupLocator();
   _runAppAsync();
-  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
