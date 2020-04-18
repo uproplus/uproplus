@@ -4,8 +4,6 @@ import 'package:uproplus/core/services/user_service.dart';
 import 'package:uproplus/locator.dart';
 import 'package:uproplus/ui/router.dart';
 import 'package:uproplus/ui/shared/app_colors.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 
 Future<bool> _isLoggedIn() async {
   return await locator<UserService>().init();
