@@ -17,7 +17,6 @@ Future _runAppAsync() async {
 }
 
 void main() {
-  runApp(MyApp(initialRoute));
   WidgetsFlutterBinding.ensureInitialized();
   setupLocator();
   _runAppAsync();
