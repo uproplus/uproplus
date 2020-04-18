@@ -7,10 +7,27 @@ import 'package:uproplus/ui/shared/app_colors.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-void main() => runApp(MyApp());
+Future<bool> _isLoggedIn() async {
+  return await locator<UserService>().init();
+}
 
+Future _runAppAsync() async {
+  var initialRoute = await _isLoggedIn() ? '/' : 'login';
+  await SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
+  runApp(MyApp(initialRoute));
+}
+
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  setupLocator();
+  _runAppAsync();
+}
 
 class MyApp extends StatelessWidget {
+  final String initialRoute;
+
+  MyApp(this.initialRoute);
 
   @override
   Widget build(BuildContext context) {
