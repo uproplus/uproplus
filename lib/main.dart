@@ -11,8 +11,6 @@ Future<bool> _isLoggedIn() async {
 
 Future _runAppAsync() async {
   var initialRoute = await _isLoggedIn() ? '/' : 'login';
-  await SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
   runApp(MyApp(initialRoute));
 }
 
