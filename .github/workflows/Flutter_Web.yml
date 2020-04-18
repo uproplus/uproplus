@@ -18,9 +18,9 @@ jobs:
           channel: 'dev'
       - run: flutter pub get
       - run: flutter config --enable-web
-      - run: flutter build web
+      - run: flutter build web --release
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BASE_BRANCH: master
-          BRANCH: gh-pages
-          FOLDER: build/web 
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./build/web 
