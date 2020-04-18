@@ -4,6 +4,10 @@ import 'package:uproplus/core/services/user_service.dart';
 import 'package:uproplus/locator.dart';
 import 'package:uproplus/ui/router.dart';
 import 'package:uproplus/ui/shared/app_colors.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+void main() => runApp(MyApp());
 
 Future<bool> _isLoggedIn() async {
   return await locator<UserService>().init();
@@ -16,11 +20,7 @@ Future _runAppAsync() async {
   runApp(MyApp(initialRoute));
 }
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  setupLocator();
-  _runAppAsync();
-}
+
 
 class MyApp extends StatelessWidget {
   final String initialRoute;
